@@ -1,0 +1,39 @@
+import tweepy
+from textblob import TextBlob
+
+consumer_key = '?' # here comes your consumer key given by the twitter api channel
+consumer_secret = '?' # and here is a consumer secret
+
+access_token = '?' # and you can get access token and
+access_token_secret = '?' # access token secret values in the api
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+
+auth.set_access_token(access_token, access_token_secret)
+
+api = tweepy.API(auth)
+
+public_tweets = api.search('Holland')
+
+for tweet in public_tweets:
+    print(tweet.text)
+    analysis=TextBlob(tweet.text)
+    print(analysis.sentiment, end="\n\n")
+    
+# it will search through public tweets
+# that includes the word Holland
+# and prints the tweet text and
+# its analysis as polarity and subjectivity
+
+my_tweets = api.user_timeline(screen_name="akyldzdgc", count=10)
+
+# we follow this process to access some user's timeline
+
+for tweet in tweets:
+    print(tweet.text, end="\n\n")
+    analysis = TextBlob(tweet.text)
+    print(analysis.sentiment, end="\n\n")
+    
+# and the same process goes for the
+# personal twitter page too
+

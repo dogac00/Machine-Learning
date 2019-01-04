@@ -1,4 +1,5 @@
 from sklearn.datasets import load_iris # we import the load_iris method
+from sklearn.linear_model import LogisticRegression() # we import the classifier
 
 iris = load_iris() # we instantiate the method
 

@@ -3,7 +3,7 @@ import sklearn import tree
 # features = [[140, "smooth"], [130, "smooth"], [150, "bumpy"][170, "bumpy"]]
 # inputs to the classifier, but skicit-learn uses real-valued features
 
-features = [[140, 1], [130, 1], [150, 0][170, 0]] # 0 for bumpy and 1 for smooth
+features = [[140, 1], [130, 1], [150, 0], [170, 0]] # 0 for bumpy and 1 for smooth
 
 # labels = ["apple", "apple", "orange", "orange"]
 # output we want

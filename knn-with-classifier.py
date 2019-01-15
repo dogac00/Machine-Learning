@@ -26,14 +26,21 @@ class KNN():
         return predictions
     
     def closest(self, row):
-        best_dist = euc(self.X_train[0])
-        best_index = 0
+        """
+        finds the closest point
+        in the training data
+        to our specific row
+        so that we find the nearest neighbor
+        """
         
-        for i in range(1, len(self.X_train)):
-            dist = euc(row, self.X_train[i])
+        best_dist = euc(self.X_train[0])  # initialize our distance to the very first data in our dataset
+        best_index = 0                    # initialize our index to the very first index in our dataset
+        
+        for i in range(1, len(self.X_train)):  # iterate through the training data i.e. all the points on the plot
+            dist = euc(row, self.X_train[i])   # find the euclidean distance between the specific row point and X_train[i]
             if dist < best_dist:
-                best_dist = dist
-                best_index = i
+                best_dist = dist  # update the best distance
+                best_index = i    # since we have found a closer one
                 
         return self.y_train[best_index]
         

@@ -58,5 +58,5 @@ knn.fit(X_train, y_train)
 knn.predict([[2,2],[7,7]]) # predict a sample
 
 # this is an implementation of KNN where k = 1
-# for k = 3 or k = 5 I think we have to
-# use a couple of for loops and iterate our training data
+# for k = 3 or k = 5 I think we have to use
+# a couple of for loops and iterate through our training data
